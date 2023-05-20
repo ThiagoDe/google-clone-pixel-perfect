@@ -51,11 +51,11 @@ export default function HomeSearch() {
           Google Search
         </button>
         <button disabled={randomSearchLoading} onClick={randomSearch} className="btn flex items-center justify-center 
-        disabled:opacity-80">
+        disabled:opacity-80 px-3" >
           {randomSearchLoading ? (
             <Image className='text-center' width={30} height={30} src="/spinner.svg" alt="loading..." />
           ) : (
-            'I am Feeling Lucky'
+            "I'm Feeling Lucky"
           )}
         </button>
       </div>
