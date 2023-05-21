@@ -13,7 +13,6 @@ export default function Home() {
           src="/toogle.png"
           alt="google logo"
         />
-
         <HomeSearch />
       </div>
     </>
