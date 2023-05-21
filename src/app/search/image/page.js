@@ -1,15 +1,17 @@
 import ImageSearchResults from '@/components/ImageSearchResults'
-import WebSearchResults from '@/components/WebSearchResults'
 import Link from 'next/link'
 import React from 'react'
 
 // next js allows async fn server side
 export default async function ImageSearchPage({ searchParams }) {
+  const startIndex = searchParams.start || "1"
+  // console.log(startIndex)
   await new Promise((resolve) => setTimeout(resolve, 5000))
   const response = await fetch(
-    `https://www.googleapis.com/customsearch/v1?key=${process.env.API_KEY}&cx=${process.env.CONTEXT_KEY}&q=${searchParams.searchTerm}&searchType=image`
+    `https://www.googleapis.com/customsearch/v1?key=${process.env.API_KEY}&cx=${process.env.CONTEXT_KEY}&q=${searchParams.searchTerm}&searchType=image&${startIndex}`
   )
   if (!response.ok) {
+    
     throw new Error('Something web wrong')
   }
 
